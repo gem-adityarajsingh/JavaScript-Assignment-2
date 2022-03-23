@@ -13,28 +13,41 @@
         float: right;
         width: 50%;
         height: 100vh;
-        background-color: #e9967a;
+        background-color:#5DBB63;
       }
       table,
       th,
       td {
-        border: 1px solid black;
+        padding:10px;  
+        border: 1px solid goldenrod;
         border-collapse: collapse;
+      }
+      table{
+          margin-left: 100px;
+      }
+      h2{
+          margin-top: 100px;
+          margin-left: 200px;
+      }
+      form{
+          margin-left: 200px;
+      }
+      button{
+          margin-left: 100px;
       }
     </style>
   </head>
   <body>
     <div id="content1">
-      <h1>Detail Form</h1>
+      <h2 style="color: crimson;">Details Form</h2>
       <form name="details-Form" onsubmit="validate()">
-        <label for="name">Name <small>*</small></label
-        ><br />
+        <label for="name">Name <small>*</small></label><br/>
         <input type="text" id="name" name="name" required /><br />
         <br/>
-        <label for="email">Email <small>*</small></label><br/>
+        <label for="email">Email <small>*</small></label><br>
         <input type="email" id="email" name="email" required /><br />
         <br />
-        <label for="mobile-number">Mobile Number</label><br />
+        <label for="mobile-number">Mobile Number</label><br>
         <input type="tel" id="mobileNumber" name="mobileNumber" /><br />
         <br />
         <input type="submit" value="Submit" />
@@ -42,12 +55,12 @@
     </div>
 
     <div id="content2">
-      <h1>User Details</h1>
+      <h2>User Details</h2>
       <table>
           <tr>
-            <th>Name</th>
-            <th>Email Address</th>
-            <th>Mobile Number</th>
+            <th style="color:#D10000;">Name</th>
+            <th style="color:#D10000;">Email Address</th>
+            <th style="color:#D10000;">Mobile Number</th>
           </tr>
         <tbody id="tableBody"></tbody>
       </table>
