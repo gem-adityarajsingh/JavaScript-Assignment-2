@@ -7,28 +7,33 @@ function validate() {
   var pattern = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?0123456789]/); //unacceptable chars
   if (pattern.test(name)) {
     alert("Please only use Alphabets for name");
-    return false;
   }
   //Validating Mobile Number
-  if (mobileNumber.length != 10) {
+  if (mobileNumber.length > 0 && mobileNumber.length != 10) {
     alert("Please enter correct Mobile Number");
-    return false;
   }
   var isMatch = mobileNumber.match(/^[0-9\s(-)]*$/);
   if (!isMatch) {
     alert("The mobile number contains invalid characters.");
+  }
+  // Validating Email
+  var atPosition = email.indexOf("@");                                            
+  var dotPosition = email.lastIndexOf(".");
+  if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= email.length) {
+    alert("Invalid email address.");
     return false;
   }
   // Storing the data in local storage if all entries are correct
   localStorage.setItem("name", name);
   localStorage.setItem("email", email);
   localStorage.setItem("mobileNumber", mobileNumber);
+  return true;
 }
 
 function create_table() {
   let tableBody = document.getElementById("tableBody");
   let tr = document.createElement("tr");
-  
+
   //creating first (name) node
   let td1 = document.createElement("td");
   let nameNode = document.createTextNode(localStorage.getItem("name"));
