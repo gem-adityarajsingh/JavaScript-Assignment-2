@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="JS-file.js" ;></script>
+    <style>
+      #content1 {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        background-color: #30d5c8;
+      }
+      #content2 {
+        float: right;
+        width: 50%;
+        height: 100vh;
+        background-color: #e9967a;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content1">
+      <h1>Detail Form</h1>
+      <form name="details-Form" onsubmit="validate()">
+        <label for="name">Name <small>*</small></label
+        ><br />
+        <input type="text" id="name" name="name" required /><br />
+        <br/>
+        <label for="email">Email <small>*</small></label><br/>
+        <input type="email" id="email" name="email" required /><br />
+        <br />
+        <label for="mobile-number">Mobile Number</label><br />
+        <input type="tel" id="mobileNumber" name="mobileNumber" /><br />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <div id="content2">
+      <h1>User Details</h1>
+      <table>
+          <tr>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Mobile Number</th>
+          </tr>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <br>
+      <button onclick="create_table()" id="btn">Show Details</button>
+    </div>
+  </body>
+</html>
