@@ -2,7 +2,6 @@ function validate() {
   var name = document.forms["details-Form"]["name"].value;
   var email = document.forms["details-Form"]["email"].value;
   var mobileNumber = document.forms["details-Form"]["mobileNumber"].value;
-
   //validating Name
   var pattern = new RegExp(/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?0123456789]/); //unacceptable chars
   if (pattern.test(name)) {
@@ -22,13 +21,15 @@ function validate() {
   if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= email.length) {
     alert("Invalid email address.");
     return false;
-  }
+  } 
   // Storing the data in local storage if all entries are correct
   localStorage.setItem("name", name);
   localStorage.setItem("email", email);
   localStorage.setItem("mobileNumber", mobileNumber);
-  return true;
+  create_table();
+  //return true;
 }
+
 
 function create_table() {
   let tableBody = document.getElementById("tableBody");
