@@ -19,11 +19,12 @@
       th,
       td {
         padding:10px;  
-        border: 1px solid goldenrod;
+        border: 1px solid royalblue;
         border-collapse: collapse;
       }
       table{
           margin-left: 100px;
+          background-color:burlywood;
       }
       h2{
           margin-top: 100px;
@@ -40,7 +41,7 @@
   <body>
     <div id="content1">
       <h2 style="color: crimson;">Details Form</h2>
-      <form name="details-Form" onsubmit="validate()">
+      <form name="details-Form" onsubmit="validate(event.preventDefault())">
         <label for="name">Name <small>*</small></label><br/>
         <input type="text" id="name" name="name" required /><br />
         <br/>
@@ -65,7 +66,7 @@
         <tbody id="tableBody"></tbody>
       </table>
       <br>
-      <button onclick="create_table()" id="btn">Show Details</button>
+      <!--<button onclick="create_table()" id="btn">Show Details</button>-->
     </div>
   </body>
 </html>
